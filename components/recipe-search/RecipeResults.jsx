@@ -23,7 +23,7 @@ const RecipeResults = ({ recipes }) => {
   } = recipes[0]; // Destructure the first item in the recipes array
 
   return (
-    <div className="mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-green-300 w-full lg:max-h-[95vh] overflow-y-auto ">
+    <div className="mx-auto bg-white max-w-lg rounded-lg overflow-hidden border border-green-300 w-full overflow-y-auto ">
       <div className="px-6 py-4">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-bold text-gray-800">{title || "Recipe"}</h2>

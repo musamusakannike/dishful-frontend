@@ -35,8 +35,8 @@ const RecipeSearchPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center px-4 py-8 bg-green-50 min-h-screen lg:h-screen w-full">
-      <div className="container flex flex-col lg:flex-row justify-center items-start w-full gap-2">
+    <div className="flex flex-col justify-center items-center px-4 py-8 bg-green-50 min-h-screen w-full">
+      <div className="container flex flex-col justify-center items-start w-full gap-2">
         <RecipeSearchForm onSearch={handleSearch} loading={loading} />
         <RecipeResults recipes={recipes} />
       </div>
