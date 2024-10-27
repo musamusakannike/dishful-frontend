@@ -28,7 +28,7 @@ const Dashboard = () => {
         null,
         token
       );
-      setUsername(userData.data.username);
+      setUsername(userData.data.user.username);
     } catch (error) {
       toast.error(
         error.message ||

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { apiRequest } from "../../../lib/utils";
+import { apiRequest, setToken } from "../../../lib/utils";
 import { Loader2 } from "lucide-react";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
