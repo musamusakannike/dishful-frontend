@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import RecipeResults from "@/components/recipe-search/RecipeResults";
 import RecipeSearchForm from "@/components/recipe-search/RecipeSearchForm";
@@ -17,8 +17,8 @@ const RecipeSearchPage = () => {
     try {
       // Use apiRequest to fetch recipe data
       const data = await apiRequest(
-        'recipe/text-recipe',
-        'POST',
+        "recipe/text-recipe",
+        "POST",
         { food: mealName, additionalText },
         token
       );
@@ -26,19 +26,20 @@ const RecipeSearchPage = () => {
       setRecipes([data]);
       toast.success("Recipe found!");
     } catch (error) {
-      toast.error(error.message || "An error occurred while searching for the recipe.");
+      toast.error(
+        error.message || "An error occurred while searching for the recipe."
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col justify-center items-center px-4 py-8 bg-green-50 min-h-screen">
-      <h1 className="text-2xl font-bold text-green-700 mb-4">
-        Find Your Recipe
-      </h1>
-      <RecipeSearchForm onSearch={handleSearch} />
-      <RecipeResults recipes={recipes} loading={loading} />
+    <div className="flex flex-col justify-center items-center px-4 py-8 bg-green-50 min-h-screen lg:h-screen w-full">
+      <div className="container flex flex-col lg:flex-row justify-center items-start w-full gap-2">
+        <RecipeSearchForm onSearch={handleSearch} loading={loading} />
+        <RecipeResults recipes={recipes} />
+      </div>
     </div>
   );
 };

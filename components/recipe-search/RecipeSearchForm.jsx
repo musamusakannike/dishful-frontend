@@ -1,8 +1,8 @@
 // RecipeSearchForm.jsx
 import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Loader2 } from 'lucide-react';
 
-const RecipeSearchForm = ({ onSearch }) => {
+const RecipeSearchForm = ({ onSearch, loading }) => {
   const [mealName, setMealName] = useState("");
   const [additionalText, setAdditionalText] = useState("");
 
@@ -14,7 +14,10 @@ const RecipeSearchForm = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-lg bg-white p-4 rounded shadow-md">
+    <form onSubmit={handleSubmit} className="flex flex-col w-full bg-white p-4 rounded border border-green-300 lg:max-w-lg mx-auto">
+      <h1 className="text-2xl font-bold text-green-700 mb-4">
+        Find Your Recipe
+      </h1>
       <label className="text-green-700 mb-2">Meal Name</label>
       <input
         type="text"
@@ -36,7 +39,7 @@ const RecipeSearchForm = ({ onSearch }) => {
         type="submit"
         className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
       >
-        <Search size={18} /> Search
+        {loading ? <Loader2 size={18} className="animate-spin" /> : <Search size={18} />} Search
       </button>
     </form>
   );

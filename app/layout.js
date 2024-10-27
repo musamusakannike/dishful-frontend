@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import "./globals.css";
+import "animate.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
