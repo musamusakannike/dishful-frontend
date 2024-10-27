@@ -50,7 +50,7 @@ export default function Hero() {
           className="flex justify-center space-x-4"
         >
           <motion.a
-            href="#"
+            href="/signup"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white hover:bg-emerald-100 text-emerald-700 font-bold py-3 px-6 rounded-full transition-colors duration-300"
