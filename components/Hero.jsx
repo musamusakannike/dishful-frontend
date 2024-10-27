@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
-import Image from 'next/image';
+import Image from "next/image";
 import HeroImage from "../assets/images/hero.png";
 
 const fadeInUp = {
@@ -25,11 +25,11 @@ const imageVariant = {
 
 export default function Hero() {
   return (
-    <motion.div 
-      initial="hidden" 
-      animate="visible" 
+    <motion.div
+      initial="hidden"
+      animate="visible"
       variants={staggerContainer}
-      className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 pt-36"
+      className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 pt-20 sm:pt-24 md:pt-28 lg:pt-36"
     >
       {/* Hero Text Section */}
       <motion.div className="max-w-4xl mx-6 md:mx-0 text-center">
@@ -43,7 +43,8 @@ export default function Hero() {
           variants={fadeInUp}
           className="text-lg md:text-xl text-emerald-100 mb-8"
         >
-          Dishful is an AI-powered recipe generator that can create mouthwatering dishes from your text and images.
+          Dishful is an AI-powered recipe generator that can create
+          mouthwatering dishes from your text and images.
         </motion.p>
         <motion.div
           variants={fadeInUp}
@@ -69,10 +70,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Hero Image Section */}
-      <motion.div
-        className="mt-16 md:mt-24"
-        variants={imageVariant}
-      >
+      <motion.div className="mt-16 md:mt-24" variants={imageVariant}>
         <Image
           src={HeroImage}
           alt="Dishful app screenshot"
