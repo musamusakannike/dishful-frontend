@@ -26,7 +26,10 @@ const Login = () => {
     setMessage(null);
 
     if (formData.password.length < 6) {
-      setMessage({ text: "Password must be at least 6 characters.", type: "error" });
+      setMessage({
+        text: "Password must be at least 6 characters.",
+        type: "error",
+      });
       setLoading(false);
       return;
     }
@@ -45,7 +48,7 @@ const Login = () => {
       if (response.status === "success") {
         if (response.data.token) {
           setToken(response.data.token);
-          router.push("/ai");
+          router.push("/dashboard");
         } else {
           setMessage({
             text: "Login failed. Please try again.",
@@ -54,7 +57,10 @@ const Login = () => {
         }
       }
     } catch (error) {
-      setMessage({ text: error.message || "Login failed. Please try again.", type: "error" });
+      setMessage({
+        text: error.message || "Login failed. Please try again.",
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }
@@ -63,11 +69,17 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-green-600">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-green-700">Sign In</h2>
+        <h2 className="text-2xl font-bold text-center text-green-700">
+          Sign In
+        </h2>
         <p className="text-center text-green-600">Access your account</p>
 
         {message && (
-          <p className={`text-center ${message.type === "error" ? "text-red-500" : "text-green-500"}`}>
+          <p
+            className={`text-center ${
+              message.type === "error" ? "text-red-500" : "text-green-500"
+            }`}
+          >
             {message.text}
           </p>
         )}
@@ -75,7 +87,10 @@ const Login = () => {
         <form className="space-y-4" onSubmit={handleSubmit}>
           {/* Email Input */}
           <div>
-            <label className="block mb-1 text-sm font-medium text-green-700" htmlFor="email">
+            <label
+              className="block mb-1 text-sm font-medium text-green-700"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -91,7 +106,10 @@ const Login = () => {
 
           {/* Password Input */}
           <div>
-            <label className="block mb-1 text-sm font-medium text-green-700" htmlFor="password">
+            <label
+              className="block mb-1 text-sm font-medium text-green-700"
+              htmlFor="password"
+            >
               Password
             </label>
             <div className="relative">
@@ -117,7 +135,7 @@ const Login = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-4 py-2 mt-4 font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400"
+            className="w-full px-4 py-2 mt-4 font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400 flex justify-center items-center"
             disabled={loading}
           >
             {loading ? <Loader2 size={20} color="#ffffff" /> : "Sign In"}
@@ -127,7 +145,10 @@ const Login = () => {
         {/* Footer Links */}
         <p className="text-center text-sm text-green-600">
           Don&apos;t have an account?
-          <Link href="/signup" className="font-semibold text-green-700 hover:underline">
+          <Link
+            href="/signup"
+            className="font-semibold text-green-700 hover:underline"
+          >
             Sign up
           </Link>
         </p>

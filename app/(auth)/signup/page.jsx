@@ -57,7 +57,7 @@ const SignUp = () => {
       if (response.status === "success") {
         if (response.data.token) {
           setToken(response.data.token);
-          router.push("/ai");
+          router.push("/dashboard");
         } else {
           setMessage({
             text: "Login failed. Please try again.",
@@ -182,7 +182,7 @@ const SignUp = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-4 py-2 mt-4 font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400"
+            className="w-full px-4 py-2 mt-4 font-semibold text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400 flex justify-center items-center"
             disabled={loading}
           >
             {loading ? <Loader2 size={20} color="#ffffff" /> : "Sign Up"}
